@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="utf-8">
+        <title>呪術廻戦風ロゴジェネーター</title>
+
+        <style>
+            @font-face {
+                font-family: JujutsuLikeFont;
+                src: url("ttfs/aoyagireisyosimo_ttf_2_01.ttf");
+            }
+            #appname{
+                color:white;
+                font-family: JujutsuLikeFont;
+                font-size: 100px;
+                text-shadow: 
+                -3px -3px 0 #e7e70c,
+                3px 3px 0 #e7e70c,
+                -3px -3px 0 #e7e70c,
+                3px 3px 0 #e7e70c;
+                color: #000f00;
+                text-align: center;
+            }
+            #detail{
+                color: white;
+                font-style: bold;
+                text-align: center;
+            }
+            .main {
+                background-image: url("images/background.png");
+                background-position: center;
+                height: 1980px;
+                margin:auto
+            }
+            .inputForm{
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <h1 id="appname">
+                呪術廻戦 風ロゴジェネレーター
+            </h1>
+            <h3 id="detail">
+                おそらく呪術廻戦ライクなロゴジェネレーターです。<br>
+                似ているかはわかりませんが、暇つぶしに作ってみました。自己満足<br>
+                下のテキストボックスに文字を入力してページを再読み込みすると、ロゴ生成されます。<br>
+                生成されたロゴを保存するには、生成されたロゴを右クリック->「名前をつけて画像を保存」でダウンロードできます。<br>
+                ※ロゴの生成に、青柳隷書しもフォントを使用しています。尚、このページで生成されたロゴは本家と異なるかもしれません<br>
+                 それでもいいよ!という方は是非遊んでみてください<br>
+                ※2 あまり、文字が長すぎるとせっかくのロゴが途切れてしまう場合があるので、途切れるな～と思ったらなるべく文字を短くしてみてください<br>
+            </h3>
+
+            <form class="inputForm">
+                <input type="text" id="logomain" placeholder="文字を入力してください">
+            </form>
+
+            <canvas id="logoCanvas" width=1280 height=720></canvas>
+            <script type="text/javascript" src="canvas.js"></script>
+        </div>
+        
+    </body>
+
+</html>
