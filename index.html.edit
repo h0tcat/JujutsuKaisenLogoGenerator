@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>呪術廻戦風ロゴジェネーター</title>
+    <style>
+        @font-face {
+            font-family: JujutsuLikeFont;
+            src: url("ttfs/aoyagireisyosimo_ttf_2_01.ttf");
+        }
+
+        #appname {
+            color: white;
+            font-family: JujutsuLikeFont;
+            font-size: 100px;
+            text-shadow:
+                -3px -3px 0 #e7e70c,
+                3px 3px 0 #e7e70c,
+                -3px -3px 0 #e7e70c,
+                3px 3px 0 #e7e70c;
+            color: #000f00;
+            text-align: center;
+        }
+
+        #detail {
+            color: white;
+            font-style: bold;
+            text-align: center;
+        }
+
+        .main {
+            background-image: url("images/background.png");
+            background-position: center;
+            height: 1980px;
+            margin: auto
+        }
+
+        .inputForm {
+            text-align: center;
+        }
+
+        #ShareJujutsu {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1 id="appname">
+            呪術廻戦 風ロゴジェネレーター
+        </h1>
+        <h3 id="detail">
+            おそらく呪術廻戦ライクなロゴジェネレーターです。<br>
+            似ているかはわかりませんが、暇つぶしに作ってみました。自己満足<br>
+            下のテキストボックスに文字を入力した状態でページを再読み込みすると、ロゴ生成されます。<br>
+            生成されたロゴを保存するには、生成されたロゴを右クリック->「名前をつけて画像を保存」でダウンロードできます。<br>
+            ※ロゴの生成に、青柳隷書しもフォントを使用しています。尚、このページで生成されたロゴは本家と異なるかもしれません<br>
+            それでもいいよ!という方は是非遊んでみてください<br>
+            ※2 あまり、文字が長すぎるとせっかくのロゴが途切れてしまう場合があるので、途切れるな～と思ったらなるべく文字を短くしてみてください<br>
+            もしよかったら、シェアボタンからシェアしていただけたら作者はとっても喜びます;)
+
+            動作が確認できた環境はPC(Windows)のFireFoxで確認しました。スマートフォン・Firefox以外のブラウザーだと動作しませんでした。
+        </h3>
+
+        <form class="inputForm">
+            <input type="text" id="logomain" placeholder="文字を入力してください">
+            <input id="drawLogoButton" type="button" value="生成!" onclick="drawLogo()">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+                data-text="呪術廻戦風ロゴジェネレーターに遊びに来たよ!" data-hashtags="呪術廻戦風ロゴジェネレーター"
+                data-url="https://h0tcat.github.io/JujutsuKaisenLogoGenerator/" data-show-count="false">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </form>
+
+        <canvas id="logoCanvas" ></canvas>
+        <script type="text/javascript">
+            var logoCanvas = document.getElementById("logoCanvas");
+
+            var contextCanvas = logoCanvas.getContext("2d");
+            var logomain = document.getElementById("logomain").value;
+
+            var textWidth;
+            var furiganaWidth;
+
+            function drawLogo() {
+
+                console.log("draw");
+                textWidth = contextCanvas.measureText(logomain).width;
+                logoCanvas.width = 1980;
+                logoCanvas.height = 720;
+                contextCanvas.clearRect(0, 0, logoCanvas.width, logoCanvas.height)
+
+                contextCanvas.font = "200px JujutsuLikeFont";
+                contextCanvas.lineWidth = 3;
+                contextCanvas.strokeStyle = "#e7e70c";
+                contextCanvas.fillStyle = "#000f00";
+
+
+                contextCanvas.fillText(logomain, ((1000 - textWidth) / 2) / 2, 720 / 2);
+                contextCanvas.strokeText(logomain, ((1000 - textWidth) / 2) / 2, 720 / 2);
+
+            }
+        </script>
+        <input type="button" id="generateButton" onclick="drawLogo()">
+    </div>
+
+</body>
+
+</html>
