@@ -36,6 +36,9 @@
             .inputForm{
                 text-align: center;
             }
+            #ShareJujutsu{
+                text-align: center;
+            }
         </style>
     </head>
 
@@ -47,7 +50,7 @@
             <h3 id="detail">
                 おそらく呪術廻戦ライクなロゴジェネレーターです。<br>
                 似ているかはわかりませんが、暇つぶしに作ってみました。自己満足<br>
-                下のテキストボックスに文字を入力してページを再読み込みすると、ロゴ生成されます。<br>
+                下のテキストボックスに文字を入力した状態でページを再読み込みすると、ロゴ生成されます。<br>
                 生成されたロゴを保存するには、生成されたロゴを右クリック->「名前をつけて画像を保存」でダウンロードできます。<br>
                 ※ロゴの生成に、青柳隷書しもフォントを使用しています。尚、このページで生成されたロゴは本家と異なるかもしれません<br>
                  それでもいいよ!という方は是非遊んでみてください<br>
@@ -56,10 +59,12 @@
 
             <form class="inputForm">
                 <input type="text" id="logomain" placeholder="文字を入力してください">
+                <a  href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="呪術廻戦風ロゴジェネレーターに遊びに来たよ!" data-hashtags="呪術廻戦風ロゴジェネレーター" data-url="https://h0tcat.github.io/JujutsuKaisenLogoGenerator/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </form>
 
             <canvas id="logoCanvas" width=1280 height=720></canvas>
             <script type="text/javascript" src="canvas.js"></script>
+            
         </div>
         
     </body>
