@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>呪術廻戦ロゴジェネーター</title>
-    <a id="downloadHiddenLink" type="hidden" href=""></a>
     <style>
         @font-face {
             font-family: JujutsuLikeFont;
@@ -34,7 +33,7 @@
             background-image: url("images/background.png");
             background-position: center;
             height: 1980px;
-            margin: auto;
+            margin: auto
         }
 
         .inputForm {
@@ -71,16 +70,6 @@
             contextCanvas.strokeText(logomain, ((1000 - textWidth) / 2) / 2, 720 / 2);
 
         }
-        //生成したロゴをダウンロードする
-        function saveLogo(){
-            var logoCanvas = document.getElementById("logoCanvas");
-            var hiddenAtag = document.getElementById("downloadHiddenLink");
-
-            var logoURL=logoCanvas.toDataURL();
-            hiddenAtag.src=logoURL;
-            console.log(logoURL);
-            hiddenAtag.click();
-        }
     </script>
 </head>
 
@@ -103,7 +92,7 @@
         <form class="inputForm">
             <input type="text" id="logomain" placeholder="文字を入力してください">
             <input id="drawLogoButton" type="button" value="生成!" onclick="drawLogo()">
-            <input id="saveLogoButton" type="button" value="ダウンロード" onclick="saveLogo()">
+            <input id="saveLogo" type="button" value="ダウンロード" onclick="saveLogo()">
             <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
                 data-text="呪術廻戦風ロゴジェネレーターに遊びに来たよ!" data-hashtags="呪術廻戦ロゴジェネレーター"
                 data-url="https://h0tcat.github.io/JujutsuKaisenLogoGenerator/" data-show-count="false">Tweet</a>
